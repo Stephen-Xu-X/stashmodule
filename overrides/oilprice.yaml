@@ -1,10 +1,15 @@
-﻿name: 油价
-desc: 复制本内容到自己的库 在provname=后面填写所在省份名，如不填写 默认江苏油价。provname的值不带"省"字 范例：provname=江苏，provname=上海，provname=广东。此脚本使用的公开apikey ，建议自行申请apikey 然后自行修改脚本内的apikey
+name: 油价
+desc: "自用广东油价监控"
+
 tiles:
   - name: youjia
     icon: 'car'
     backgroundColor: '#c932a9'
     argument: 'provname=广东'
+    script: youjia          # <--- 【关键修复】这里必须指定使用哪个脚本源
+
 script-providers:
   youjia:
-    url: https://github.com/Stephen-Xu-X/stash--/raw/refs/heads/main/js/oilprice.js
+    # 建议使用标准的 raw.githubusercontent.com 链接，更加稳定
+    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/js/oilprice.js
+    interval: 7200          # 建议加上更新间隔（例如2小时），否则可能不会自动刷新
