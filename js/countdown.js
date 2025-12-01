@@ -1,22 +1,22 @@
 /**
- * Stash 倒数日脚本
- * 参数：title=标题&date=目标日期(YYYY-MM-DD)&icon=图标
+ * 倒数日脚本
+ * 路径：js/countdown.js
  */
 
 const params = getParams($argument);
-const targetDateStr = params.date || "2026-01-01"; // 默认日期
-const title = params.title || "重要日子";
-const icon = params.icon || "calendar";
+// 如果没有参数，默认倒数到 2026年春节 (2026-02-17)
+const targetDateStr = params.date || "2026-02-17"; 
+const title = params.title || "春节倒计时";
+const icon = params.icon || "hourglass";
 
-// 计算逻辑
-const now = new Date();
+// 计算日期差
+const 当前 = new Date();
 const target = new Date(targetDateStr);
-// 修正时区差异，简化处理
 const diffTime = target.getTime() - now.getTime();
 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 
 let content = "";
-let color = "#32d74b"; // 绿色 (未来)
+let color = "#32d74b"; // 绿色
 
 if (diffDays > 0) {
   content = `还有 ${diffDays} 天`;
@@ -25,7 +25,7 @@ if (diffDays > 0) {
   color = "#ff9f0a"; // 橙色
 } else {
   content = `已过去 ${Math.abs(diffDays)} 天`;
-  color = "#ff453a"; // 红色 (过去)
+  color = "#ff453a"; // 红色
 }
 
 $done({
