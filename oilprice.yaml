@@ -7,4 +7,4 @@ tiles:
     argument: 'provname=广东'
 script-providers:
   youjia:
-    url: https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/oil.js
+    url: https://github.com/Stephen-Xu-X/stash--/raw/refs/heads/main/%E6%B2%B9%E4%BB%B7%E6%9F%A5%E8%AF%A2%E8%84%9A%E6%9C%AC.js
