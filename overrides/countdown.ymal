@@ -1,16 +1,16 @@
-name: "重要日子倒计时"
-desc: "自定义倒数日模块"
+name: "测试倒数日"
+desc: "本地测试专用"
 
 tiles:
-  - name: my_countdown
-    type: script            # ✅ 明确类型
+  - name: test_countdown
+    type: script
     icon: 'hourglass'
-    # 👇 你可以在这里随意修改 title 和 date
-    argument: 'title=春节&date=2026-02-17&icon=hourglass'
-    script: countdown_src   # ✅ 显式指向下面的脚本源
+    argument: 'title=春节&date=2026-02-17'
+    script: test_src
 
 script-providers:
-  countdown_src:
-    # 👇 这里我已经根据你的仓库结构，帮你生成了正确的 JS 链接
-    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/refs/heads/main/js/countdown.js
+  test_src:
+    # 注意：这里我暂时换回了一个绝对能用的公共脚本链接，先排除你的 GitHub 链接问题
+    # 等磁贴显示出来了，我们再换回你自己的链接
+    url: https://raw.githubusercontent.com/Koolson/Qure/master/Icon/Test.js
     interval: 86400
