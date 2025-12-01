@@ -12,5 +12,5 @@ tiles:
 script-providers:
   countdown_src:
     # 👇 这里我已经根据你的仓库结构，帮你生成了正确的 JS 链接
-    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/js/countdown.js
+    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/refs/heads/main/js/countdown.js
     interval: 86400
