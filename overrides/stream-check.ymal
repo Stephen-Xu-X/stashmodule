@@ -17,11 +17,11 @@ tiles:
 script-providers:
   # === 脚本源 1 (对应上面的 openai_check) ===
   openai_check:
-    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/js/StreamCheck.js
+    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/refs/heads/main/js/stream-check.js
     interval: 3600
 
   # === 脚本源 2 (对应上面的 netflix_check) ===
   netflix_check:
     # 虽然是同一个 JS 文件，但为了满足同名匹配规则，必须再写一次
-    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/js/StreamCheck.js
+    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/refs/heads/main/js/stream-check.js
     interval: 3600
