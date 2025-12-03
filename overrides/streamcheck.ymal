@@ -1,12 +1,12 @@
-name: "OpenAI 检测"
-desc: "仿照成功模板制作的检测面板"
-
+# streamcheck.yaml
+name: "ChatGPT 检测模块"
+description: "检测当前连接节点是否能够成功访问 ChatGPT"
+version: "1.0"
+script: "https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/streamcheck.js"
 tiles:
-  - name: streamcheck        # 【关键】名字 A
-    icon: 'bolt'
-    backgroundColor: '#10a37f'
-
-script-providers:
-  streamcheck:               # 【关键】名字 A (必须与上面完全一致)
-    # 👇 务必换成你自己的 raw 链接
-    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/js/streamcheck.js
+  - name: "ChatGPT 连接检测"
+    type: "tile"
+    size: "medium"
+    refresh_interval: "10s"  # 每10秒钟刷新一次
+    display_type: "magnetic_tile"
+    content: "实时更新内容"
