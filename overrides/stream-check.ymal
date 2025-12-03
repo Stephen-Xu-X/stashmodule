@@ -1,25 +1,27 @@
-name: "AI与流媒体检测"
-desc: "检测当前节点的 OpenAI 和 Netflix 解锁情况"
+name: "流媒体检测"
+desc: "OpenAI 与 Netflix 检测面板"
 
 tiles:
-  # === 第一个磁贴：检测 OpenAI ===
-  - name: check_openai
-    type: script
+  # === 磁贴 1: OpenAI ===
+  - name: openai_check        # 名字必须与下面的 script-providers 对应
     icon: 'bolt'
-    # 👇 关键：参数传入 app=OpenAI
+    backgroundColor: '#10a37f' # OpenAI 绿色
     argument: 'app=OpenAI&icon=bolt'
-    script: my_stream_checker  # 呼叫下面的源
 
-  # === 第二个磁贴：检测 Netflix ===
-  - name: check_netflix
-    type: script
-    icon: 'play.tv'
-    # 👇 关键：参数传入 app=Netflix
-    argument: 'app=Netflix&icon=play.tv'
-    script: my_stream_checker  # 复用同一个源！
+  # === 磁贴 2: Netflix ===
+  - name: netflix_check       # 名字必须与下面的 script-providers 对应
+    icon: 'play.tv.fill'
+    backgroundColor: '#E50914' # Netflix 红色
+    argument: 'app=Netflix&icon=play.tv.fill'
 
 script-providers:
-  my_stream_checker:
-    # 👇 记得替换成你自己的 Raw 链接！
-    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/refs/heads/main/js/stream-check.js
+  # === 脚本源 1 (对应上面的 openai_check) ===
+  openai_check:
+    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/js/StreamCheck.js
+    interval: 3600
+
+  # === 脚本源 2 (对应上面的 netflix_check) ===
+  netflix_check:
+    # 虽然是同一个 JS 文件，但为了满足同名匹配规则，必须再写一次
+    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/js/StreamCheck.js
     interval: 3600
