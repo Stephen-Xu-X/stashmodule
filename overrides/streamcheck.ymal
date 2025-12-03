@@ -2,7 +2,7 @@
 name: "ChatGPT 检测模块"
 description: "检测当前连接节点是否能够成功访问 ChatGPT"
 version: "1.0"
-script: "https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/streamcheck.js"
+script: "https://raw.githubusercontent.com/Stephen-Xu-X/stash--/refs/heads/main/js/streamcheck.js"
 tiles:
   - name: "ChatGPT 连接检测"
     type: "tile"
