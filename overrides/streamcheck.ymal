@@ -1,27 +1,16 @@
-name: "流媒体检测"
-desc: "OpenAI 与 Netflix 检测面板"
+name: "OpenAI 单项检测"
+desc: "极简版连通性测试"
 
 tiles:
-  # === 磁贴 1: OpenAI ===
-  - name: openai_check        # 名字必须与下面的 script-providers 对应
+  - name: stream_check          # 磁贴ID
+    type: script                # 明确类型
     icon: 'bolt'
-    backgroundColor: '#10a37f' # OpenAI 绿色
+    backgroundColor: '#10a37f'  # OpenAI 绿
     argument: 'app=OpenAI&icon=bolt'
-
-  # === 磁贴 2: Netflix ===
-  - name: netflix_check       # 名字必须与下面的 script-providers 对应
-    icon: 'play.tv.fill'
-    backgroundColor: '#E50914' # Netflix 红色
-    argument: 'app=Netflix&icon=play.tv.fill'
+    script: stream_check        # 【关键】显式指向下面的脚本源
 
 script-providers:
-  # === 脚本源 1 (对应上面的 openai_check) ===
-  openai_check:
-    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/refs/heads/main/js/stream-check.js
-    interval: 3600
-
-  # === 脚本源 2 (对应上面的 netflix_check) ===
-  netflix_check:
-    # 虽然是同一个 JS 文件，但为了满足同名匹配规则，必须再写一次
-    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/refs/heads/main/js/stream-check.js
+  stream_check:                 # 脚本源ID (必须与上面的 script 对应)
+    # 👇 请务必替换为你自己的 Raw 链接
+    url: https://raw.githubusercontent.com/Stephen-Xu-X/stash--/main/js/streamcheck.js
     interval: 3600
